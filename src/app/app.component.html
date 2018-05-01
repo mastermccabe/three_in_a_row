@@ -1,0 +1,35 @@
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+
+  </h1>
+
+  <div class="button-group" data-spy="affix" data-offset-top="197" role="group" id="myBtn">
+    <button type="button" class="btn btn-primary" (click)="changeInterval(1)">20 Seconds</button>
+    <button type="button" class="btn btn-primary" (click)="changeInterval(3)">1 Minute</button>
+    <button type="button" class="btn btn-primary" (click)="changeInterval(15)">5 Minute</button>
+    <button type="button" class="btn btn-primary" (click)="changeInterval(90)">30 Minute</button>
+    <button type="button" class="btn btn-primary" (click)="changeInterval(180)">1 Hour</button>
+  </div>
+
+
+  <br><br>
+
+  <div *ngFor="let image_row of image_rows; let row = index;">
+
+    <div class="row mb-3">
+      <div class="col-4" *ngFor="let image of image_row; let i = index;">
+        <div class="card">
+          <h6 class="card-header">{{image.date}}</h6>
+          <img class="img-fluid" src="{{image.url}}" />
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+
+</div>
